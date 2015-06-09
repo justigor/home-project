@@ -1,23 +1,26 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Application Template",
-    "keywords": ["yii2", "framework", "basic", "application template"],
-    "homepage": "http://www.yiiframework.com/",
-    "type": "project",
-    "license": "BSD-3-Clause",
-    "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
-    },
-    "minimum-stability": "stable",
+    "name": "yii2mod/base",
+    "description": "Base application template for Yii2",
+    "homepage": "https://github.com/yii2mod/base/",
+    "type": "yii-extension",
+    "authors": [
+        {
+            "name": "Dmitry Semenov",
+            "email": "disemx@gmail.com",
+            "homepage": "http://disem.org/"
+        },
+        {
+            "name": "Igor Chepurnoy"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "yii2mod/yii2-cron-log": "*",
+        "yii2mod/yii2-rbac": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
