@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 use yii2mod\user\models\BaseUserModel;
 
 /**
@@ -18,24 +20,24 @@ use yii2mod\user\models\BaseUserModel;
  */
 class UserModel extends BaseUserModel
 {
+
     /**
-     * @inheritdoc
+     * @var string
      */
-    public static function tableName()
-    {
-        return 'User';
-    }
+    public $newPassword;
 
     /**
      * @inheritdoc
      */
     public function rules()
     {
-        return [
-            [['username', 'passwordHash', 'email', 'createdAt', 'updatedAt'], 'required'],
+        return ArrayHelper::merge(parent::rules(), [
+            [['username', 'email', 'createdAt', 'updatedAt'], 'required'],
+            [['email'], 'email'],
             [['createdAt', 'updatedAt', 'lastLogin'], 'integer'],
-            [['username', 'passwordHash', 'email'], 'string', 'max' => 255]
-        ];
+            [['username', 'passwordHash', 'email'], 'string', 'max' => 255],
+            [['newPassword'], 'safe'],
+        ]);
     }
 
     /**
@@ -44,13 +46,25 @@ class UserModel extends BaseUserModel
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'username' => 'Username',
-            'passwordHash' => 'Password Hash',
-            'email' => 'Email',
-            'createdAt' => 'Created At',
-            'updatedAt' => 'Updated At',
-            'lastLogin' => 'Last Login',
+            'id'          => 'ID',
+            'username'    => 'Username',
+            'email'       => 'Email',
+            'createdAt'   => 'Created At',
+            'updatedAt'   => 'Updated At',
+            'lastLogin'   => 'Last Login',
+            'newPassword' => 'New Password',
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        if (isset($this->newPassword)) {
+            $this->setPassword($this->newPassword);
+            $this->generateAuthKey();
+        }
+        return parent::beforeSave($insert);
     }
 }

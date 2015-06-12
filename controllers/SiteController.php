@@ -45,6 +45,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            $model->getUser()->updateLastLogin();
             return $this->goBack();
         } else {
             return $this->render('login', [
@@ -77,5 +78,15 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    /**
+     * @param $lang
+     */
+    public function actionLanguage($lang = 'en')
+    {
+        // @todo: save selected language to cookie and redirect
+
+        return $this->goBack();
     }
 }

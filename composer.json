@@ -19,8 +19,11 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
+        "yii2mod/yii2-enum": "*",
         "yii2mod/yii2-cron-log": "*",
-        "yii2mod/yii2-rbac": "*"
+        "yii2mod/yii2-rbac": "*",
+        "kartik-v/yii2-widget-alert": "*",
+        "kartik-v/yii2-widget-growl": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

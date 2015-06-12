@@ -25,7 +25,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php NavBar::begin([
-            'brandLabel' => 'My Company',
+            'brandLabel' => 'Home',
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar-inverse navbar-fixed-top',
@@ -34,7 +34,7 @@ AppAsset::register($this);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
-                ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Dashboard', 'url' => ['/admin'], 'visible' => Yii::$app->user->can('viewDashboard')],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
                 Yii::$app->user->isGuest ?

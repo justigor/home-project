@@ -23,4 +23,16 @@
         'guest',
         '/site/index',
     ],
+    [
+        'viewDashboard',
+        '/admin/dashboard/index',
+    ],
+    [
+        'root',
+        'admin',
+    ],
+    [
+        'admin',
+        'user',
+    ],
 ];

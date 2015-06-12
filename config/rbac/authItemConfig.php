@@ -69,4 +69,18 @@
         NULL,
         NULL,
     ],
+    [
+        'viewDashboard',
+        2,
+        'User can see dashboard',
+        NULL,
+        NULL,
+    ],
+    [
+        '/admin/dashboard/index',
+        2,
+        NULL,
+        NULL,
+        NULL,
+    ],
 ];

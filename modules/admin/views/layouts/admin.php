@@ -1,4 +1,6 @@
 <?php
+
+use kartik\alert\AlertBlock;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -23,13 +25,22 @@ AppAsset::register($this);
 <body>
 
 <?php $this->beginBody() ?>
+<?php echo AlertBlock::widget([
+    'type' => AlertBlock::TYPE_GROWL,
+    'useSessionFlash' => true,
+]) ?>
+
 <div class="wrap">
-    <?php NavBar::begin();
+    <?php NavBar::begin([
+        'brandLabel' => 'Home',
+        'brandUrl' => Yii::$app->homeUrl,
+    ]);
 
     echo Nav::widget([
         'items' => [
             ['label' => 'Dashboard', 'url' => ['/admin/dashboard/index']],
-            ['label' => 'RBAC', 'url' => ['/admin/rbac/assignment/index'], 'active' => 'rbac' == Yii::$app->controller->module->id],
+            ['label' => 'RBAC', 'url' => ['/admin/rbac/assignment'], 'active' => 'rbac' == Yii::$app->controller->module->id],
+            ['label' => 'Users', 'url' => ['/admin/user/index'], 'active' => 'user' == Yii::$app->controller->id],
         ],
     ]);
 
