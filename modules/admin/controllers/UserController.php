@@ -5,7 +5,6 @@ namespace app\modules\admin\controllers;
 use app\models\search\UserSearchModel;
 use app\models\UserModel;
 use yii\bootstrap\ActiveForm;
-use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
@@ -70,7 +69,6 @@ class UserController extends Controller
      * Perform ajax validation
      *
      * @param $model
-     * @param $questionModels
      * @return mixed
      */
     protected function performAjaxValidation($model)

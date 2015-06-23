@@ -35,4 +35,8 @@
         'admin',
         'user',
     ],
+    [
+        'admin',
+        'viewDashboard',
+    ],
 ];

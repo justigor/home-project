@@ -5,6 +5,9 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('ensure that home page works');
 $I->amOnPage(Yii::$app->homeUrl);
+if (method_exists($I, 'wait')) {
+    $I->wait(1); // only for selenium
+}
 $I->see('My Company');
 $I->seeLink('About');
 $I->click('About');

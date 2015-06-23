@@ -1,4 +1,22 @@
 actor: Tester
+coverage:
+    enabled: true
+    c3_url: 'http://127.0.0.1:8080/index-test.php'
+    remote: true
+    include:
+      - ../controllers/*.php
+      - ../components/*.php
+      - ../helpers/*.php
+      - ../models/*.php
+      - ../modules/*.php
+      - ../widgets/*.php
+      - ../web/*.php
+      - ../config/*.php
+      - ../views/*.php
+      - ../widgets/*.php
+    exclude:
+        - ../runtime/*
+        - ../vendor/*
 #coverage:
 #    #c3_url: http://localhost:8080/index-test.php/
 #    enabled: true
