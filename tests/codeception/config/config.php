@@ -12,9 +12,19 @@ return [
         ],
     ],
     'components' => [
-        /*'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=yii2_basic_tests',
-        ],*/
+        'db' => [
+            'class'     => 'yii\db\Connection',
+            'dsn'       => 'pgsql:host=localhost;dbname=test',
+            'username'  => 'root',
+            'password'  => '',
+            'charset'   => 'utf8',
+            'schemaMap' => [
+                'pgsql' => [
+                    'class'         => 'yii\db\pgsql\Schema',
+                    'defaultSchema' => 'public' //specify your schema here
+                ]
+            ],// PostgreSQL
+        ],
         'mailer' => [
             'useFileTransport' => true,
         ],
