@@ -13,8 +13,8 @@ return [
         'db' => [
             'class'    => 'yii\db\Connection',
             'dsn'      => 'pgsql:host=localhost;dbname=test',
-            'username' => 'pguser',
-            'password' => 'pguser',
+            'username' => 'pguser5',
+            'password' => 'pguser6',
             'charset'  => 'utf8',
             'schemaMap' => [
                 'pgsql'=> [
