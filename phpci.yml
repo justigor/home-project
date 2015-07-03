@@ -6,8 +6,8 @@ build_settings:
         - "tests"
     pgsql:
         host: 'localhost'
-        user: 'pguser1'
-        pass: 'pguser2'
+        user: 'pguser'
+        pass: 'pguser'
 
 setup:
     pgsql:
