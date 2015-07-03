@@ -16,6 +16,8 @@ setup:
         - "GRANT ALL PRIVILEGES ON test.* TO test@'localhost' IDENTIFIED BY 'test';"
     composer:
         action: "update"
+    codeception:
+        - "build"
 
 test:
     codeception:
