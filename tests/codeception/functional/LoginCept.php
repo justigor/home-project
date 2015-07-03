@@ -23,6 +23,7 @@ $I->expectTo('see validations errors');
 $I->see('Incorrect username or password.');
 
 $I->amGoingTo('try to login with correct credentials');
-$loginPage->login('admin', 'admin');
+$loginPage->login('admin', '123123');
 $I->expectTo('see user info');
 $I->see('Logout (admin)');
+
