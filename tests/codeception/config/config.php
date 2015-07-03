@@ -16,7 +16,7 @@ return [
             'class'     => 'yii\db\Connection',
             'dsn'       => 'pgsql:host=localhost;dbname=test',
             'username'  => 'root',
-            'password'  => '',
+            'password'  => 'admin',
             'charset'   => 'utf8',
             'schemaMap' => [
                 'pgsql' => [
