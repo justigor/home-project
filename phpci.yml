@@ -15,11 +15,12 @@ setup:
         action: "update"
     codeception:
         - "build"
+    codeception:
+        log_path: "tests/_log"
 
 test:
     codeception:
         config: "tests/codeception.yml"
-        log_path: "tests/_log"
 #    php_unit:
 #        config:
 #            - "PHPUnit-all.xml"
