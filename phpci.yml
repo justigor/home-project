@@ -13,6 +13,8 @@ setup:
     pgsql:
     composer:
         action: "update"
+    shell:
+        - "codecept build --config=tests"
 
 test:
 #    ./yii migrate/up --migrationPath=@yii2mod/rbac/migrations
@@ -21,8 +23,6 @@ test:
         log_path: "tests/codeception/_output"
         path: "tests/codeception/_output/"
         config: "tests/codeception.yml"
-#    codeception:
-#        - "build"
 #    php_unit:
 #        config:
 #            - "PHPUnit-all.xml"
