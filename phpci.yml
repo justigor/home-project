@@ -14,9 +14,10 @@ setup:
     composer:
         action: "update"
     codeception:
-        - "build"
+        log_path: "tests/codeception/_output"
+        config: "tests/codeception.yml"
     codeception:
-        log_path: "tests/_log"
+        - "build"
 
 test:
     codeception:
