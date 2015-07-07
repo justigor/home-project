@@ -5,7 +5,7 @@ build_settings:
         - "vendor"
         - "tests"
     pgsql:
-        host: 'localhost'
+        host: 'localhost;dbname=test'
         user: 'pguser'
         pass: 'pguser'
 
@@ -13,15 +13,16 @@ setup:
     pgsql:
     composer:
         action: "update"
-    codeception:
-        log_path: "tests/codeception/_output"
-        config: "tests/codeception.yml"
-    codeception:
-        - "build"
 
 test:
+#    ./yii migrate/up --migrationPath=@yii2mod/rbac/migrations
+#    ./yii rbac/sync-deploy
     codeception:
+        log_path: "tests/codeception/_output"
+        path: "tests/codeception/_output/"
         config: "tests/codeception.yml"
+#    codeception:
+#        - "build"
 #    php_unit:
 #        config:
 #            - "PHPUnit-all.xml"
@@ -41,5 +42,5 @@ test:
 
 complete:
     pgsql:
-        - "DROP DATABASE test;"
+        #- "DROP DATABASE test;"
 
