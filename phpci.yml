@@ -11,16 +11,17 @@ build_settings:
 
 setup:
     pgsql:
-        - "DROP DATABASE IF EXISTS testdb;"
-        - "CREATE DATABASE testdb;"
+#        - "DROP DATABASE IF EXISTS testdb;"
+#        - "CREATE DATABASE testdb;"
     composer:
         action: "update"
     shell:
         - "codecept build --config=tests"
+        - "./yii migrate --interactive=0"
+        - "./yii migrate --interactive=0 --migrationPath=@yii2mod/rbac/migrations"
+        - "./yii rbac/sync-deploy"
 
 test:
-#    ./yii migrate/up --migrationPath=@yii2mod/rbac/migrations
-#    ./yii rbac/sync-deploy
     codeception:
         log_path: "tests/codeception/_output"
         path: "tests/codeception/_output/"
@@ -43,6 +44,5 @@ test:
 #        task: "build"
 
 complete:
-    pgsql:
-        #- "DROP DATABASE test;"
+#        - "DROP DATABASE IF EXISTS testdb;"
 
