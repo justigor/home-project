@@ -5,12 +5,14 @@ build_settings:
         - "vendor"
         - "tests"
     pgsql:
-        host: 'localhost;dbname=test'
+        host: 'localhost;dbname=testdb'
         user: 'pguser'
         pass: 'pguser'
 
 setup:
     pgsql:
+        - "DROP DATABASE IF EXISTS testdb;"
+        - "CREATE DATABASE testdb;"
     composer:
         action: "update"
     shell:

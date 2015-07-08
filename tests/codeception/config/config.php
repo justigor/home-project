@@ -14,7 +14,7 @@ return [
     'components' => [
         'db' => [
             'class'     => 'yii\db\Connection',
-            'dsn'       => 'pgsql:host=localhost;dbname=test',
+            'dsn'       => 'pgsql:host=localhost;dbname=testdb',
             'username'  => 'pguser',
             'password'  => 'pguser',
             'charset'   => 'utf8',
